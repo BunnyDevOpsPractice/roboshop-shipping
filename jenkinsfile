@@ -5,7 +5,7 @@ def configMap = [
     component: "shipping"
 ]
 if ( ! env.BRANCH_NAME.equalsIgnoreCase('main')){
-    goLANGPipeline(configMap)
+    javaMVNEKSPipeline(configMap)
 }
 else{
     echo "Please follow production process"
