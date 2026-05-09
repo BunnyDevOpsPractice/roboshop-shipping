@@ -1,0 +1,12 @@
+@Library('roboshop-shared-lib')_
+
+def configMap = [
+    project: "roboshop",
+    component: "shipping"
+]
+if ( ! env.BRANCH_NAME.equalsIgnoreCase('main')){
+    goLANGPipeline(configMap)
+}
+else{
+    echo "Please follow production process"
+}
