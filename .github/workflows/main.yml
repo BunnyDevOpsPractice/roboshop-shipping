@@ -1,0 +1,14 @@
+# roboshop-user/.github/workflows/user.yml
+name: shipping
+on:
+  push: { branches: [main] }
+  workflow_dispatch:
+jobs:
+  ci:
+    uses: BunnyDevOpsPractice/ArgoCD_Project/.github/workflows/ci.yml@main
+    with:
+      language: java
+      component: shipping
+      deploy: true          # so it bumps gitops; faithful ci.yml defaults this to false
+    secrets:
+      GITOPS_TOKEN: ${{ secrets.GITOPS_TOKEN }}
