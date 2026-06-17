@@ -9,6 +9,6 @@ jobs:
     with:
       language: java
       component: shipping
-      deploy: true          # so it bumps gitops; faithful ci.yml defaults this to false
+      deploy: false          # so it bumps gitops; faithful ci.yml defaults this to false
     secrets:
       GITOPS_TOKEN: ${{ secrets.GITOPS_TOKEN }}
